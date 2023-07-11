@@ -82,3 +82,4 @@ Note:
 	SHA1 is a 20 bytes in hexdec format. every obj in git has its own SHA1
 	Date is stored in key value pair - key (Hash )
 	blob means end.
+//Sample check
