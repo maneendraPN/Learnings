@@ -1,0 +1,12 @@
+Sorting Algorithms:
+BubbleSort(a[],n):O(N^2),O(1)
+	for(i=0;i<n-1;i++)
+		flag=false;
+		for(j=0;j<n-i-1;j++)
+			if cmp(a[i]>a[i+1]) // compare adjacent elemetns
+				swap();
+				flag=1;
+		if flag == flase     //if no two elements are swapped then break already sorted .
+			break
+
+			

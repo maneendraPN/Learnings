@@ -1,0 +1,115 @@
+Linux:
+1.ssh - user@sserver
+2.ls (-l,-la,-lrt)
+3.pwd 
+4.cd (..,-(last wd))
+5.touch (a{1..10},-d(Future))
+6.echo 
+7.nano (ctrl+x->y)
+8.vim 
+9.cat
+10.shred () - encrypts file
+11.mkdir 
+12.cp <source><dest>
+13.rm (-rf) 
+14.rmdir
+15.ln (-s)
+16.whoami
+17.useradd <username>, sudo
+18.adduser
+19.sudo 
+20.adduser
+21.su <username>
+22.exit
+23.passwd
+24.sudo apt update, install
+25.finger  - inspect user 
+26.man 
+26.whatis
+27.which
+28.whereis
+29.wget
+30.curl
+31.zip
+32.unzip
+33.less
+34.head
+35.tail
+36.cmp 
+37.diff
+38.sort
+39.find (-name , -type , '.*',-perm /a=x,)
+40.chmod +x
+41.chown (Change Ownership)
+42.ifconfig
+43.ip address
+44.grep 
+45.awk 
+46.cat 
+47.resolvectl status
+48.ping (-c count, -s size)
+49.traceroute (path client -> server)
+50.netstat(-tulpn , ports opened)
+51.ss (-tulpn)
+52.iptables 
+53.ufw (allow 80, status,enable)
+54.uname (-a)
+55.neofetch
+56.cal
+57.bc (basic calculator)
+58.free
+59.df(-H)
+60.ps
+61.top
+62.htop
+63.kill (-9 (forcibly killing))
+64.pkill -f p_name
+65.systemctl (start,stop,status)
+66.history
+67.reboot
+68.shutdown (-h now)
+Windows:
+1.ipconfig (/all,ip info) , (ipconfig /all | findstr DNS)
+2.findstr 
+3.ipconfig /release - let the ip go (specific interface ipconfig /release "Wi-Fi")
+4.ipconfig /renew - get new ip from dhcp
+5.ipconfig /displaydns
+6.ipconfig /displaydns | clip (copy to clipboard)
+7.ipconfig /flushdns (dns overcache)
+8.nslookup <url>
+9.cls
+10.getmac /v (Macaddr)
+11.powercfg /energy
+12.powercfg /batteryreport
+13.assoc (which file opened with which program)
+14.assoc .mp4=VLC.vlc
+15.chkdsk /f (go through disk and check errors) /r check for physical sector issues
+16.sfc /scannow (system file checker)
+17.DISM /Online /Cleanup-Image /ScanHealth (Deployement image servicing and management)
+18.DISM /Online /Cleanup-Image /RestoreHealth (After doing this go and sfc)
+19.tasklist | findstr script
+20.taskkill /f /pid <pid>
+21.netsh wlan show wlanreport (Wireless report)  (Find one report you can find something)
+22.netsh interface show interface
+23.netsh interface ip show address | findstr "IP Address"
+24.netsh interface ip show dnsservers
+25.netsh advfirewall set allprofiles state off (Turn off windows defender firewall)
+26.ping (-t,)
+27.tracert (-d (not resolve domain names)) 
+28.netstat (what connected to you and what you are connected to)
+29.netstat -af (opened ports)
+30.netstat -o 
+31. netstat -e -t 5
+32.route print (routing table)
+33.route add <dest_nw> mask <> <gateway>
+34.route delete <dest_nw>
+35.shutdown /r /fw /f /t 0 (restart to bois)
+36.
+#wsl internet fix
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+#Transfer files from wsl to windows
+explorer.exe .
+#

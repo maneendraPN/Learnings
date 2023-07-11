@@ -1,0 +1,12 @@
+Vim cheatsheet:
+String replacement:
+	:%s/foo/bar/g - replace all occurances of foo with bar ENTIRE FILE
+	:s/foo/bar - only First occurance in current line
+	:%s/foo/bar/g - all occurances in current line
+	:s/foo//g - will delete all occurances of foo in current line
+yy - copy
+p - paste
+dd - delete
+gg - beginning of file
+G  - End of file
+

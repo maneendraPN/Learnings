@@ -1,0 +1,4 @@
+breakpoint - that exec should stop at a particular source code loc
+watchpoint - that exec should stop when a particular memory location changes value
+catchpoint - exec should stop when a particular event occurs
+

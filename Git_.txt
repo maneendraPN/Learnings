@@ -1,0 +1,84 @@
+Git - version control system - Git is a distributed version control system that tracks changes in any set of computer files
+git help -a
+git help <command> - opens man  page
+Three Stages:
+	Modified - changed your file but not committed to db
+	Staged	 - means that you have marked a modified file in its current version to go into you next commit snapshot  - 'index'
+	Commited - that the data is safely stored in your local db (repo)
+
+Workflow:
+1.modify files in your working tree.
+2.selectively stage just those changes you want to be part of your next commit,which adds only those changes to the staging area
+3.you do a commit , which takes the files as they are in the staging area and stores that snapshot permanently to your git repo
+
+git --version 
+
+git configuration:
+	to know who is making changes 
+	local - repo/.git/config (repo or project level)
+	global - users/user/.gitconfig (User level)
+	system - /usr/local/etc/gitconfig (git installation)
+
+	git config --list --show-origin (find config files)
+	git config --unset user.email
+	git config user.email (with which mail changes will commit)
+	git config user.name
+	git config --local user.email <email> in project level you can add your usermail
+	git config --local --remove-section user - remove everything at project level
+	 
+	 
+initializing an empty git repo
+git init - .git is added first command to be run on a project {master branch is created}
+git status - status of the project
+git add <file> -to track the untracked file (moving to staging area)
+git rm --cached <file> - to unstage or untrack
+git commit - commited (-m to add single line msg)
+	git commit --amend (after making the new changes you can do like this) the changes you've done after will go to last commit.
+git log - to view history of commits (HEAD->Current pointer)
+	git log --oneline
+	git log --oneline --graph
+git diff - difference between the changes made on a file. 
+	git diff - changes b/w working area and staging area
+	git diff --staged - b/w staging area and repo area
+ 	git diff Head-- b/w working area and repo area
+git cat-file <commit>
+mv <file_1><file_2> file_2 moved to untracd and file_1 will be deleted if we add both to staged area then git will know they both are same
+git mv <file1><file_2> directly renames and move it to the staged area.
+git restore --staged <file_name> - restore file from staged area
+git restore <file_name> - restore files in the working directory
+
+Git Branching:
+	when init is done - master is created
+git checkout <branch_name> - checkout to the branch
+	git checkout -b - creates a branch and checkout
+git branch - lists branches
+	git branch <branch_name> - creates a branch with branch_name 
+	git branch -m <new_branch_name> - renames the current branch
+	git branch -d <branch_name> - deletes a branch (need to be in other branch)
+	git branch -D <branch_name> - changes in the branch also get deleted
+Merging Branches:
+if there's no commits in master before merging the branch then it'll fast forwaded
+if commits happended in master after branching out a new_branch then when we do merge it'll create a new commit.
+when there two different things in same file while merging the branches merge conflicts will raise
+and it'll go to the merge state - branch_name | MERGING) then you can go to the file and resolve the conflicts
+after clearing the conflicts you can add and commit your changes you just need to keep which file you want you can clear other branch changes.
+git merge --abort - abort the merging
+git merge <branch_name> - merges a branch to the branch that you are now in.
+
+Git Rebase:
+	Merge preserves history but rebase don't
+	used to cleanup our local commit history
+	four public branches never use merge
+	cleanup commit history
+git rebase <branch_name> - all commits will come in a same branch and master branch which you are used rebase will continue to stick to branch you are rebasing. master commmits will top
+Interactive rebasing - making multiple commits into single commit
+git rebase -i master - select the commits you want use squash that will use the commit and merge it to the previous commit
+
+Git cherrypick:
+	if you want to apply particular commit from one branch into another then you can use cherrypick
+	cause duplicate commits
+	git cherry-pick <Hash> - apply the changes in the commit to cwb
+Note:
+	SHA1 is a 20 bytes in hexdec format. every obj in git has its own SHA1
+	Date is stored in key value pair - key (Hash )
+	blob means end.

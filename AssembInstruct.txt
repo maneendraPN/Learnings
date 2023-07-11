@@ -1,0 +1,1 @@
+mov <dest_reg><src_reg>
